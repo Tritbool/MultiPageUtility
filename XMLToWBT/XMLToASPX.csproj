@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F6DF52DE-0EC6-4801-947B-F821043FB3F7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XMLToWBT</RootNamespace>
+    <AssemblyName>XMLToWBT</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataStructure\Node.cs" />
+    <Compile Include="DataStructure\Tree.cs" />
+    <Compile Include="Factories\Factory.cs" />
+    <Compile Include="Factories\FactoryInterface.cs" />
+    <Compile Include="Factories\XmlObjectFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XmlObjects\Containers\Actions.cs" />
+    <Compile Include="XmlObjects\Containers\Block.cs" />
+    <Compile Include="XmlObjects\Containers\TabStrip.cs" />
+    <Compile Include="XmlObjects\Content\Actions\Add.cs" />
+    <Compile Include="XmlObjects\Content\Actions\Drop.cs" />
+    <Compile Include="XmlObjects\Content\Actions\Edit.cs" />
+    <Compile Include="XmlObjects\Content\Actions\Move.cs" />
+    <Compile Include="XmlObjects\Containers\Multipage.cs" />
+    <Compile Include="XmlObjects\Containers\PageView.cs" />
+    <Compile Include="XmlObjects\Content\Button.cs" />
+    <Compile Include="XmlObjects\Content\Caption.cs" />
+    <Compile Include="XmlObjects\Content\CheckBox.cs" />
+    <Compile Include="XmlObjects\Content\ComboBox.cs" />
+    <Compile Include="XmlObjects\Content\DatePicker.cs" />
+    <Compile Include="XmlObjects\Content\Editor.cs" />
+    <Compile Include="XmlObjects\Content\Grid.cs" />
+    <Compile Include="XmlObjects\Content\Hyperlink.cs" />
+    <Compile Include="XmlObjects\Content\Image.cs" />
+    <Compile Include="XmlObjects\Content\Label.cs" />
+    <Compile Include="XmlObjects\Content\NumericTextBox.cs" />
+    <Compile Include="XmlObjects\Content\RadioButton.cs" />
+    <Compile Include="XmlObjects\Content\Tab.cs" />
+    <Compile Include="XmlObjects\Content\TextBox.cs" />
+    <Compile Include="XmlObjects\Content\UnreferencedTag.cs" />
+    <Compile Include="XmlObjects\XmlObject.cs" />
+    <Compile Include="XmlToAspx\Parser.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="XmlObjects\migration.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
